@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    BOT_CLIENT_ID: process.env.BOT_CLIENT_ID,
+  },
   async redirects() {
     return [
       { source: '/auth', destination: '/auth/signin', permanent: false },
