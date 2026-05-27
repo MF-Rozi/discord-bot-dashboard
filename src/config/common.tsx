@@ -22,8 +22,7 @@ const BotIcon = createIcon({
 export const config: AppConfig = {
   name: 'Demo Bot',
   icon: BotIcon,
-  inviteUrl:
-    'https://discord.com/api/oauth2/authorize?client_id=1070011901385375845&permissions=8&scope=bot',
+  inviteUrl: `https://discord.com/api/oauth2/authorize?client_id=${process.env.NEXT_PUBLIC_BOT_CLIENT_ID ?? '1070011901385375845'}&permissions=8&scope=bot`,
   guild: {
     //filter guilds that user has no permissions to manage it
     filter: (guild) => (Number(guild.permissions) & PermissionFlags.ADMINISTRATOR) !== 0,

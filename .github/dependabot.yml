@@ -1,0 +1,19 @@
+# Dependabot configuration: automatically open dependency update PRs weekly
+# See: https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependabot
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "03:00"
+    open-pull-requests-limit: 5
+    # Only allow updates for direct dependencies by default to reduce noise
+    allow:
+      - dependency-type: "direct"
+    labels:
+      - "dependencies"
+      - "automerge"
+    # Enable security updates to be created immediately
+    security-updates: true
