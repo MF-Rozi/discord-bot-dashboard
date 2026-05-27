@@ -1,19 +1,22 @@
-> Deprecated
->
-> Please consider other alternatives. You may continuously use it but no support will be provided.
-
 ![banner](./document/preview-new.png)
 
-# Discord Bot Dashboard Template
+# Discord Bot Dashboard (Maintained Fork)
 
-Using Typescript, Next.js 13, React 18 and Chakra ui 2.0
+Using Typescript, Next.js 13, React 18 and Chakra UI 2.0.
 
 - Support Light/Dark theme
 - Multi languages support (i18n)
 - Typescript support
 - Nice UI & UX + Fast performance
-- Flexiable and Customizable
+- Flexible and Customizable
 - Detailed Documentation
+
+## Attribution
+
+This project is a maintained fork of the original work by **fuma-nama**:
+https://github.com/fuma-nama/discord-bot-dashboard-next
+
+Thanks to the original author for creating and open-sourcing the base dashboard template.
 
 **Video:** https://youtu.be/IdMPjT5PzVk <br/>
 **Live Demo:** https://demo-bot.vercel.app
@@ -28,93 +31,61 @@ Using Typescript, Next.js 13, React 18 and Chakra ui 2.0
 
 ## Getting Started
 
-As a template, you need to customize a few things in order to get it work
+This fork is maintained with an **npm-first** workflow.
 
-### Before that
+### Requirements
 
-- Install Node.js, and a Package Manager (ex: npm or pnpm)
+- Node.js 20+
+- npm
 
-### Required Skills
+### Quick Start
 
-- Basic knowledge about React.js
-- Able to read javascript/typescript
+1. Clone your fork.
+   `git clone https://github.com/<your-account>/discord-bot-dashboard.git`
+2. Install dependencies.
+   `npm install`
+3. Create `.env` from `.env.example` and fill the values.
+4. Start development server.
+   `npm run dev`
+5. Open `http://localhost:3000`.
 
-### Set up
+### Environment Variables
 
-1. **Clone the repo**
-   <br>
-   `git clone https://github.com/fuma_nama/discord-bot-dashboard-next.git`
-2. **Install dependencies**
-   <br>
-   We always prefer [`PNpm`](https://pnpm.io)
+These are required:
 
-   |      NPM      |      PNPM      |
-   | :-----------: | :------------: |
-   | `npm install` | `pnpm install` |
+| Variable | Description |
+| --- | --- |
+| `BOT_CLIENT_ID` | Discord OAuth2 application client ID |
+| `BOT_CLIENT_SECRET` | Discord OAuth2 application client secret |
+| `APP_URL` | Public URL of the dashboard (use `http://localhost:3000` in local development) |
+| `NEXT_PUBLIC_API_ENDPOINT` | Base URL of your bot backend API |
 
-3. **Customize files**
-   <br>
-   The file structure of this project
-   | Path | Description |
-   | ------------------------------------- | ------------- |
-   | [src/pages/\*](./src/pages) | All the pages |
-   | [src/components/\*](./src/components) | Components |
-   | [src/api/\*](./src/api) | API utils |
-   | [src/config/\*](./src/api) | Common configurations |
-4. **Define Features**
-   <br>
-   The dashboard has built-in support for configuring features
-   <br>
-   Users are able to enable/disable features and config the feature after enabling it
+### Available Scripts
 
-   **Customize all typings in [src/config/types/custom-types.ts](./src/config/types/custom-types.ts)**
-   <br>
-   `CustomFeatures` is used for defining features and options, see the example for more details
+- `npm run dev` - Start development server
+- `npm run build` - Create production build
+- `npm run start` - Run production server
+- `npm run lint` - Run Next.js ESLint checks
+- `npm run typecheck` - Run TypeScript type checks
 
-   **Open [src/config/features](./src/config/features.tsx)**
-   <br>
-   You can see how a feature is configured
+### Project Structure
 
-   ```tsx
-   'feature-id': {
-        name: 'Feature name',
-        description: 'Description about this feature',
-        icon: <Icon as={BsMusicNoteBeamed} />, //give it a cool icon
-        useRender: (data) => {
-            //render the form
-        },
-    }
-   ```
+| Path | Description |
+| --- | --- |
+| [src/pages/\*](./src/pages) | App pages and API routes |
+| [src/components/\*](./src/components) | UI components |
+| [src/api/\*](./src/api) | API utilities |
+| [src/config/\*](./src/config) | Common configurations and feature definitions |
 
-   The `useRender` property is used to render Feature Configuration Panel <br>
-   Take a look at [here](./src/config/example/WelcomeMessageFeature.tsx) for examples
+### Customize Features
 
-5. **Configure General Information**
-   <br>
-   Modify [src/config/common.tsx](./src/config/common.tsx)
-   - Bot name & icon
-   - Invite url _(example: https://discord.com/oauth2/authorize?client_id=1234&scope=bot)_
-   - Guild settings
-6. **Configure Environment variables**
-   <br>
-   Those variables in [.env.example](./.env.example) are required
-   <br>
-   You can define environment variables by creating a `.env` file
-7. **Setup Backend Server**
-   <br>
-   In order to let the dashboard connected with your discord bot, you will need a backend server
-   <br>
-   You can implement it in any programming languages
+The dashboard supports configurable features.
 
-   Read [here](#backend-development) for a guide to develop your own server
+1. Update typings in [src/config/types/custom-types.ts](./src/config/types/custom-types.ts).
+2. Define feature metadata/renderers in [src/config/features.tsx](./src/config/features.tsx).
+3. Use [src/config/example/WelcomeMessageFeature.tsx](./src/config/example/WelcomeMessageFeature.tsx) as reference.
 
-8. **Done!**
-   <br>
-   Start the app by `pnpm run dev` _(depends on your package manager)_
-   <br>
-   Then you should see the app started in port `3000`
-
-   [Localization](./document/localization.md) | [Forms](./document/form.md)
+[Localization](./document/localization.md) | [Forms](./document/form.md)
 
 ## Authorization
 
@@ -214,6 +185,6 @@ GET `/guilds/{guild}/channels`
 
 ## Any issues?
 
-Feel free to ask a question by opening a issue
+Feel free to ask a question by opening an issue.
 
 **Love this project?** Give this repo a star!
