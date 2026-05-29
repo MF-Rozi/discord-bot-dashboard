@@ -15,5 +15,3 @@ updates:
     labels:
       - "dependencies"
       - "automerge"
-    # Enable security updates to be created immediately
-    security-updates: true
