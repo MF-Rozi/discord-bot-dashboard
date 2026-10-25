@@ -72,8 +72,8 @@ dependencies:
     specifier: 1.4.0
     version: 1.4.0(apexcharts@3.36.3)(react@18.2.0)
   react-calendar:
-    specifier: ^3.7.0
-    version: 3.9.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^6.0.1
+    version: 6.0.1(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
   react-colorful:
     specifier: ^5.6.1
     version: 5.6.1(react-dom@18.2.0)(react@18.2.0)
@@ -2929,8 +2929,8 @@ packages:
     dev: true
     optional: true
 
-  /@wojtekmaj/date-utils@1.0.3:
-    resolution: {integrity: sha512-1VPkkTBk07gMR1fjpBtse4G+oJqpmE+0gUFB0dg3VIL7qJmUVaBoD/vlzMm/jNeOPfvlmerl1lpnsZyBUFIRuw==}
+  /@wojtekmaj/date-utils@2.0.2:
+    resolution: {integrity: sha512-Do66mSlSNifFFuo3l9gNKfRMSFi26CRuQMsDJuuKO/ekrDWuTTtE4ZQxoFCUOG+NgxnpSeBq/k5TY8ZseEzLpA==}
     dev: false
 
   /@zag-js/element-size@0.1.0:
@@ -3261,6 +3261,11 @@ packages:
 
   /client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+    dev: false
+
+  /clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
     dev: false
 
   /color-convert@1.9.3:
@@ -4126,10 +4131,10 @@ packages:
       resolve-pkg-maps: 1.0.0
     dev: true
 
-  /get-user-locale@1.5.1:
-    resolution: {integrity: sha512-WiNpoFRcHn1qxP9VabQljzGwkAQDrcpqUtaP0rNBEkFxJdh4f3tik6MfZsMYZc+UgQJdGCxWEjL9wnCUlRQXag==}
+  /get-user-locale@3.0.0:
+    resolution: {integrity: sha512-iJfHSmdYV39UUBw7Jq6GJzeJxUr4U+S03qdhVuDsR9gCEnfbqLy9gYDJFBJQL1riqolFUKQvx36mEkp2iGgJ3g==}
     dependencies:
-      lodash.memoize: 4.1.2
+      memoize: 10.2.0
     dev: false
 
   /glob-parent@5.1.2:
@@ -4566,10 +4571,6 @@ packages:
       p-locate: 5.0.0
     dev: true
 
-  /lodash.memoize@4.1.2:
-    resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
-    dev: false
-
   /lodash.mergewith@4.6.2:
     resolution: {integrity: sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==}
     dev: false
@@ -4594,8 +4595,11 @@ packages:
     resolution: {integrity: sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==}
     dev: false
 
-  /merge-class-names@1.4.2:
-    resolution: {integrity: sha512-bOl98VzwCGi25Gcn3xKxnR5p/WrhWFQB59MS/aGENcmUc6iSm96yrFDF0XSNurX9qN4LbJm0R9kfvsQ17i8zCw==}
+  /memoize@10.2.0:
+    resolution: {integrity: sha512-DeC6b7QBrZsRs3Y02A6A7lQyzFbsQbqgjI6UW0GigGWV+u1s25TycMr0XHZE4cJce7rY/vyw2ctMQqfDkIhUEA==}
+    engines: {node: '>=18'}
+    dependencies:
+      mimic-function: 5.0.1
     dev: false
 
   /merge2@1.4.1:
@@ -4610,6 +4614,11 @@ packages:
       braces: 3.0.3
       picomatch: 2.3.2
     dev: true
+
+  /mimic-function@5.0.1:
+    resolution: {integrity: sha512-VP79XUPxV2CigYP3jWwAUFSku2aKqBH7uTAapFWCBqutsbmDo96KY5o8uh6U+/YSIn5OxJnXp73beVkpqMIGhA==}
+    engines: {node: '>=18'}
+    dev: false
 
   /minimatch@10.2.5:
     resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
@@ -4923,18 +4932,23 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-calendar@3.9.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-g6RJCEaPovHTiV2bMhBUfm0a1YoMj4bOUpL8hQSLmR1Glhc7lgRLtZBd4mcC4jkoGsb+hv9uA/QH4pZcm5l9lQ==}
+  /react-calendar@6.0.1(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-b8E61W7qk/He9XEbtbQBjnALPuGmxeglsotgZyAShqN1vHMzXWjl4g7WI5tRF93RE4Wbo0c0BKN3vTQhrBojpg==}
     peerDependencies:
-      react: ^16.3.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     dependencies:
-      '@wojtekmaj/date-utils': 1.0.3
-      get-user-locale: 1.5.1
-      merge-class-names: 1.4.2
-      prop-types: 15.8.1
+      '@types/react': 18.0.26
+      '@wojtekmaj/date-utils': 2.0.2
+      clsx: 2.1.1
+      get-user-locale: 3.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+      warning: 4.0.3
     dev: false
 
   /react-clientside-effect@1.2.6(react@18.2.0):
@@ -5791,6 +5805,12 @@ packages:
       detect-node-es: 1.1.0
       react: 18.2.0
       tslib: 2.8.1
+    dev: false
+
+  /warning@4.0.3:
+    resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
+    dependencies:
+      loose-envify: 1.4.0
     dev: false
 
   /which-boxed-primitive@1.1.1:
